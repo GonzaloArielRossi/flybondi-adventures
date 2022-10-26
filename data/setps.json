@@ -1,0 +1,45 @@
+[
+  {
+    "alt": "calendar",
+    "img": "./step-by-step/calendar.svg",
+    "title": "Select Your flight",
+    "description": "Exercitation consequat officia adipisicing excepteur sint et ad voluptate nulla voluptate culpa.",
+    "link": "Check our discounts"
+  },
+  {
+    "alt": "included",
+    "img": "./step-by-step/included.svg",
+    "title": "What's included?",
+    "description": "Officia commodo aute  nisi voluptate proident veniam laboris anim aliqua consequat commodo.",
+    "link": "What can I bring?"
+  },
+  {
+    "alt": "pay",
+    "img": "./step-by-step/pay.svg",
+    "title": "Pay for your ticket",
+    "description": "Aliqua qui anim pariatur minim magna. Laborum nisi adipisicing laboris aliqua sit pariatur.",
+    "link": "Payment methods"
+  },
+
+  {
+    "alt": "check-in",
+    "img": "./step-by-step/check-in.svg",
+    "title": "Check-in",
+    "description": "Culpa mollit exercitation aliquip nostrud do nostrud. Aliqua qui anim pariatur minim magna.",
+    "link": "What is a check-in?"
+  },
+  {
+    "alt": "boarding-pass",
+    "img": "./step-by-step/boarding-pass.svg",
+    "title": "Get your boarding pass",
+    "description": "Est ut aliquip ea do amet esse commodo non Lorem sit deserunt consectetur labore quis.",
+    "link": "What is a boarding pass?"
+  },
+  {
+    "alt": "calendar",
+    "img": "./step-by-step/calendar.svg",
+    "title": "See you at the airport!",
+    "description": "Id aute cillum dolor fugiat ipsum enim non magna  reprehenderit id sit laborum commodo.",
+    "link": "What documentation do I need?"
+  }
+]
