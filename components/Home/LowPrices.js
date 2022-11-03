@@ -26,6 +26,7 @@ export default function LowPrices() {
             alignSelf={'center'}
             alt="our fleet"
             boxSize={'min'}
+            g={0}
             objectFit="cover"
             src="./low-prices/our-fleet.svg"
           />
@@ -69,8 +70,13 @@ export default function LowPrices() {
         </Stack>
       </Grid>
       <Button
-        _hover={{ bg: 'brand.100', transform: 'scale(1.02)' }}
+        _hover={{
+          backgroundColor: 'brand.500',
+          border: '1px solid',
+          borderColor: 'brand.100'
+        }}
         alignSelf={'center'}
+        aria-label={'Wanna know more about our low prices?'}
         bg={'brand.100'}
         color={'black'}
         fontSize={['xs', 'sm', 'md', 'md']}

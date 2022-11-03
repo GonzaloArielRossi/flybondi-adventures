@@ -58,14 +58,20 @@ export default function LargeWithAppLinksAndSocial() {
       bg={useColorModeValue('brand.200', 'gray.900')}
       color={useColorModeValue('gray.100', 'gray.100')}
     >
-      <Container as={Stack} maxW={'8xl'} py={10}>
+      <Container
+        as={Stack}
+        m={'0 auto'}
+        maxW={['90vw', '90vw', '90vw', '1200px']}
+        px={0}
+        py={10}
+      >
         <Grid gap={12} templateColumns={['1fr', '1fr', '1fr 2fr', '1fr 2fr']}>
           <Stack align={'flex-start'}>
             <ListHeader>We Are Flybondi</ListHeader>
             <Text>
-              Somos los que no dejan que las distancias nos separen de los que
-              más queremos. Somos los que hoy estamos acá y mañana podemos estar
-              allá. Somos un equipo trabajando para que todos podamos volar.
+              {`We are the ones that don't let distance separete us. We are the
+              ones that are here today, but could be anywhere tomorrow. We are a
+              team working toghether with the goal of making flying accesible for all`}
             </Text>
           </Stack>
           <SimpleGrid columns={{ base: 1, sm: 3, md: 3 }} spacing={8}>
@@ -116,18 +122,25 @@ export default function LargeWithAppLinksAndSocial() {
           </SimpleGrid>
         </Grid>
       </Container>
-      <Container as={Stack} maxW={'8xl'} py={10}>
+      <Container
+        as={Stack}
+        m={'0 auto'}
+        maxW={['90vw', '90vw', '90vw', '1200px']}
+        px={0}
+        py={10}
+      >
         <Box
           borderColor={useColorModeValue('gray.200', 'gray.700')}
           borderStyle={'solid'}
           borderTopWidth={1}
         >
-          <Container
+          <Stack
             align={['center', 'center', 'flex-end', 'flex-end']}
-            as={Stack}
             direction={{ base: 'column', md: 'row' }}
             justify={{ md: 'space-between' }}
-            maxW={'8xl'}
+            m={'0 auto'}
+            maxW={['90vw', '90vw', '90vw', '1200px']}
+            px={0}
             py={4}
             spacing={4}
           >
@@ -157,7 +170,7 @@ export default function LargeWithAppLinksAndSocial() {
               alt="flybondi logo"
               src="./flybondi-logo-white.svg"
             />
-          </Container>
+          </Stack>
         </Box>
       </Container>
     </Box>

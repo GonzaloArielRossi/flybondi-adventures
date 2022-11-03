@@ -26,6 +26,7 @@ specifiers:
   react: 18.2.0
   react-dom: 18.2.0
   react-icons: ^4.6.0
+  react-lazyload: ^3.2.0
 
 dependencies:
   '@chakra-ui/icons': 2.0.11_react@18.2.0
@@ -38,6 +39,7 @@ dependencies:
   next: 12.3.1_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-lazyload: 3.2.0_biqbaboplfbrettd7655fr4n2y
 
 devDependencies:
   eslint: 8.25.0
@@ -4067,6 +4069,16 @@ packages:
 
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
+
+  /react-lazyload/3.2.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-zJlrG8QyVZz4+xkYZH5v1w3YaP5wEFaYSUWC4CT9UXfK75IfRAIEdnyIUF+dXr3kX2MOtL1lUaZmaQZqrETwgw==}
+    peerDependencies:
+      react: ^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
+      react-dom: ^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
 
   /react-remove-scroll-bar/2.3.4_react@18.2.0:
     resolution: {integrity: sha512-63C4YQBUt0m6ALadE9XV56hV8BgJWDmmTPY758iIJjfQKt2nYwoUrPk0LXRXcB/yIj82T1/Ixfdpdk68LwIB0A==}

@@ -32,7 +32,7 @@ export default function WithSubnavigation() {
 
   return (
     <Box
-      as={'navbar'}
+      as={'nav'}
       backgroundColor={isDark ? '#1A202C' : '#FFFFFF'}
       boxShadow="lg"
       overflow={'hidden'}
@@ -41,15 +41,14 @@ export default function WithSubnavigation() {
       width={'100%'}
       zIndex={'10'}
     >
-      <Container maxW={['100vw', '100vw', '90vw', '80vw']}>
+      <Container m={'0 auto'} maxW={['90vw', '90vw', '90vw', '1200px']} p={0}>
         <Flex
           align={'center'}
           bg={useColorModeValue('white', 'gray.800')}
           borderBottom={1}
           color={useColorModeValue('gray.600', 'white')}
-          minH={'60px'}
-          px={{ base: 4 }}
-          py={{ base: 2 }}
+          m={0}
+          p={0}
         >
           <Flex
             display={{ base: 'flex', md: 'none' }}
@@ -114,24 +113,24 @@ const DesktopNav = () => {
   const popoverContentBgColor = useColorModeValue('white', 'gray.800');
 
   return (
-    <Stack direction={'row'} my={4} spacing={4}>
+    <Stack direction={'row'} mr={'3rem'} my={4} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label}>
-          <Popover placement={'bottom-start'} trigger={'hover'}>
+        <Box key={navItem.label} minWidth={'fit-content'}>
+          <Popover placement={'bottom-start'} trigger={'hover'} width={'5rem'}>
             <PopoverTrigger>
-              <Link
+              <Text
                 _hover={{
-                  textDecoration: 'none',
-                  color: linkHoverColor
+                  textDecoration: 'underline',
+                  color: linkHoverColor,
+                  cursor: 'pointer'
                 }}
                 color={linkColor}
                 fontSize={'sm'}
                 fontWeight={500}
-                href={navItem.href ?? '#'}
                 p={2}
               >
                 {navItem.label}
-              </Link>
+              </Text>
             </PopoverTrigger>
 
             {navItem.children && (
@@ -259,11 +258,24 @@ const MobileNavItem = ({ label, children, href }) => {
 };
 const NAV_ITEMS = [
   {
-    label: 'Bookings',
-    href: '/bookings'
+    label: 'Chek in'
   },
   {
-    label: 'Contact',
-    href: '/contact'
+    label: 'Bookings'
+  },
+  {
+    label: 'Flight Status'
+  },
+  {
+    label: 'Groups'
+  },
+  {
+    label: 'Club'
+  },
+  {
+    label: 'Blog'
+  },
+  {
+    label: 'FAQ'
   }
 ];

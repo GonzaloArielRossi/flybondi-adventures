@@ -3,7 +3,7 @@ import { Stack } from '@chakra-ui/react';
 
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
-import Main from '../components/Main/Main';
+import HomeMain from '../components/Home/HomeMain';
 
 export default function Home({ airports }) {
   return (
@@ -15,15 +15,15 @@ export default function Home({ airports }) {
       </Head>
       <Stack direction={'column'} gap={'50px'} h={'100vh'}>
         <Navbar />
-        <Main props={airports} />
+        <HomeMain props={airports} />
         <Footer />
       </Stack>
     </>
   );
 }
 
-export const getStaticProps = async (context) => {
-  const res = await fetch(`${process.env.API_URL}/airports`);
+export const getStaticProps = async () => {
+  const res = await fetch(`${process.env.API_URL}/api/airports`);
   const airports = await res.json();
 
   if (airports.status === 'success') {

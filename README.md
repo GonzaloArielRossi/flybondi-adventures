@@ -1,34 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Flybondi Adventures
 
-## Getting Started
+![](https://camo.githubusercontent.com/87c0241be85ca2be42708cc329284aead15b9844a06450a4e4f333ea8c55abbb/68747470733a2f2f666c79626f6e64692e636f6d2f6173736574732f696d616765732f6c6f676f2e737667)
 
-First, run the development server:
+## Description
 
-```bash
-npm run dev
-# or
-yarn dev
+This project derives from the "Interview challenge for fullstack developers" posted by Flybondi, an argentinian low-cost airline.
+[(Challenge Repo)](https://github.com/flybondi/dev-challenge)
+
+The original idea was to make a simple flight search interface for an old lady that has no particular destiny in mind but it's on a budget.
+
+I decided to take this a step further and created a clone of Flybondi's UI and came up with the concept of "Flybondi Adventures" a flight search engine that allows you to find "random" flights based on your budget. Kind of a "throw a dart at the map" vibe.
+
+The original challenge provided a JSON with flights, but I decided to create my own backend server with a custom database. It consists of a list of all the argentinian airports that Flybondi operates in, and a list of randomly generated trips that I created with a script.
+
+```JSON
+Airport:
+    {
+        id: String,
+        name: String,
+        city: String,
+        iata: String,
+        latitude: String,
+        longitude: String,
+        state: String
+    }
+
+Flight:
+    {
+        id: String,
+        origin: Airport,
+        destination: Airport,
+        departureDate: Date,
+        arrivalDate: Date,
+        price: Number,
+        stock: Number,
+        plane: String
+    }
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+After the user "throws" a dart, the app will return all trips available from the city of origin that depart the month the user selected. Trips can go from 2 days long to 60 days long. Results are sorted by total cost (low to high).
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## TECH STACKS
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Front end
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- NextJs
+- ReactJs
+- ChakraUI
 
-## Learn More
+Back End
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- NodeJS
+- Express
+- MongoDB
+- Mongoose
