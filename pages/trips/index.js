@@ -36,7 +36,7 @@ export default function Home({ response }) {
 export async function getServerSideProps({ query }) {
   const { airportId, date, budget, passengers } = query;
   const res = await fetch(
-    `http://127.0.0.1:3300/api/flights/${airportId}?` +
+    `${process.env.API_URL}/api/flights/${airportId}?` +
       new URLSearchParams({
         date,
         budget,
