@@ -13,7 +13,7 @@ I decided to take this a step further and created a clone of Flybondi's UI and c
 
 The original challenge provided a JSON with flights, but I decided to create my own backend server with a custom database. It consists of a list of all the argentinian airports that Flybondi operates in, and a list of randomly generated trips that I created with a script.
 
-```JSON
+```
 Airport:
     {
         id: String,
