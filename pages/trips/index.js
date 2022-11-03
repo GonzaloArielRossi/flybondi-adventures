@@ -35,15 +35,22 @@ export default function Home({ response }) {
 
 export async function getServerSideProps({ query }) {
   const { airportId, date, budget, passengers } = query;
-  const res = await fetch(
-    `${process.env.API_URL}/api/flights/${airportId}?` +
-      new URLSearchParams({
-        date,
-        budget,
-        passengers
-      })
-  );
-  const response = await res.json();
+  let response = null;
+
+  try {
+    const res = await fetch(
+      `${process.env.API_URL}/api/flights/${airportId}?` +
+        new URLSearchParams({
+          date,
+          budget,
+          passengers
+        })
+    );
+
+    response = await res.json();
+  } catch (err) {
+    console.log(err);
+  }
 
   return {
     props: { response }

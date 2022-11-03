@@ -23,12 +23,17 @@ export default function Home({ airports }) {
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch(`${process.env.API_URL}/api/airports`);
-  const airports = await res.json();
+  let airports = null;
 
-  if (airports.status === 'success') {
-    return {
-      props: { airports }
-    };
+  try {
+    const res = await fetch(`${process.env.API_URL}/api/airports`);
+
+    airports = await res.json();
+  } catch (err) {
+    console.log(err);
   }
+
+  return {
+    props: { airports }
+  };
 };

@@ -31,7 +31,7 @@ export default function SearchBox({ props }) {
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = colorMode === 'dark';
   // STATES
-  const [airportId, setAirportId] = useState(props.airports[0].id);
+  const [airportId, setAirportId] = useState(props?.airports[0].id);
   const [date, setDate] = useState(`${year}-${month}`);
   const [passengers, setPassengers] = useState('1');
   const [budget, setBudget] = useState(
@@ -146,11 +146,12 @@ export default function SearchBox({ props }) {
               type="text"
               onChange={(e) => setAirportId(e.target.value)}
             >
-              {props.airports.map((airport) => (
-                <option key={airport.id} value={airport.id}>
-                  {`${airport.city} (${airport.iata})`}
-                </option>
-              ))}
+              {props &&
+                props.airports.map((airport) => (
+                  <option key={airport.id} value={airport.id}>
+                    {`${airport.city} (${airport.iata})`}
+                  </option>
+                ))}
             </Select>
           </Stack>
         </Stack>

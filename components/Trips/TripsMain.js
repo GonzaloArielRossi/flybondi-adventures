@@ -10,7 +10,6 @@ import { useRouter } from 'next/router';
 import LazyLoad from 'react-lazyload';
 
 import TripDetails from './TripDetails';
-import TripOptions from './TripOptions';
 import TripSummary from './TripSummary';
 
 export default function TripsMain({ props }) {
@@ -24,7 +23,7 @@ export default function TripsMain({ props }) {
 
   return (
     <>
-      {props.results === 0 && (
+      {props?.results === 0 && (
         <Flex alignSelf={'center'} direction={'column'} gap={'2rem'}>
           <Heading>No trips found!🔍</Heading>
           <Heading fontSize={'2xl'}>
@@ -52,69 +51,70 @@ export default function TripsMain({ props }) {
         </Flex>
       )}
       {/* <TripOptions origin={props.trips[0].awayCandidate.origin.city} /> */}
-      {props.trips.map((trip) => (
-        <LazyLoad key={trip.id} height={50} offset={50}>
-          <Grid
-            align={'center'}
-            bg={[
-              isDark
-                ? 'linear-gradient(90deg, #FDBE15 3%, #2D3748 3%)'
-                : 'linear-gradient(90deg, #FDBE15 3%, #F4F4F4 3%)',
-              isDark
-                ? 'linear-gradient(90deg, #FDBE15 2.5%, #2D3748 2.5%)'
-                : 'linear-gradient(90deg, #FDBE15 2.5%, #F4F4F4 2.5%)',
-              isDark
-                ? 'linear-gradient(90deg, #FDBE15 2%, #2D3748 2%)'
-                : 'linear-gradient(90deg, #FDBE15 2%, #F4F4F4 2%)',
-              isDark
-                ? 'linear-gradient(90deg, #FDBE15 1.5%, #2D3748 1.5%)'
-                : 'linear-gradient(90deg, #FDBE15 1.5%, #F4F4F4 1.5%)'
-            ]}
-            g={['1rem', '1rem', '1rem', '0']}
-            mt={'2rem'}
-            py={['2rem', '2rem', '2rem', '0']}
-            rounded={'lg'}
-            shadow={'lg'}
-            templateColumns={[
-              'repeat(1, auto)',
-              'repeat(1, auto)',
-              'repeat(1, auto)',
-              '2fr auto 2fr auto 1fr'
-            ]}
-          >
-            <TripDetails props={trip.awayCandidate} />
-            <Divider
-              alignSelf={'center'}
-              backgroundColor={'brand.100'}
-              h={['3px', '3px', '3px', '100%']}
-              mx={'auto'}
-              opacity={100}
-              orientation={[
-                'horizontal',
-                'horizontal',
-                'horizontal',
-                'vertical'
+      {props &&
+        props.trips.map((trip) => (
+          <LazyLoad key={trip.id} height={50} offset={50}>
+            <Grid
+              align={'center'}
+              bg={[
+                isDark
+                  ? 'linear-gradient(90deg, #FDBE15 3%, #2D3748 3%)'
+                  : 'linear-gradient(90deg, #FDBE15 3%, #F4F4F4 3%)',
+                isDark
+                  ? 'linear-gradient(90deg, #FDBE15 2.5%, #2D3748 2.5%)'
+                  : 'linear-gradient(90deg, #FDBE15 2.5%, #F4F4F4 2.5%)',
+                isDark
+                  ? 'linear-gradient(90deg, #FDBE15 2%, #2D3748 2%)'
+                  : 'linear-gradient(90deg, #FDBE15 2%, #F4F4F4 2%)',
+                isDark
+                  ? 'linear-gradient(90deg, #FDBE15 1.5%, #2D3748 1.5%)'
+                  : 'linear-gradient(90deg, #FDBE15 1.5%, #F4F4F4 1.5%)'
               ]}
-              p={0}
-              w={['80%', '80%', '80%', '5px']}
-            />
-            <TripDetails props={trip.returnCandidate} />
-            {/* PRECIO */}
-            <Divider
-              alignSelf={'center'}
-              backgroundColor={'brand.100'}
-              border={'none'}
-              h={['3px', '3px', '3px', '100%']}
-              mx={'auto'}
-              opacity={100}
-              orientation="vertical"
-              p={0}
-              w={['80%', '80%', '80%', '5px']}
-            />
-            <TripSummary props={trip} />
-          </Grid>
-        </LazyLoad>
-      ))}
+              g={['1rem', '1rem', '1rem', '0']}
+              mt={'2rem'}
+              py={['2rem', '2rem', '2rem', '0']}
+              rounded={'lg'}
+              shadow={'lg'}
+              templateColumns={[
+                'repeat(1, auto)',
+                'repeat(1, auto)',
+                'repeat(1, auto)',
+                '2fr auto 2fr auto 1fr'
+              ]}
+            >
+              <TripDetails props={trip.awayCandidate} />
+              <Divider
+                alignSelf={'center'}
+                backgroundColor={'brand.100'}
+                h={['3px', '3px', '3px', '100%']}
+                mx={'auto'}
+                opacity={100}
+                orientation={[
+                  'horizontal',
+                  'horizontal',
+                  'horizontal',
+                  'vertical'
+                ]}
+                p={0}
+                w={['80%', '80%', '80%', '5px']}
+              />
+              <TripDetails props={trip.returnCandidate} />
+              {/* PRECIO */}
+              <Divider
+                alignSelf={'center'}
+                backgroundColor={'brand.100'}
+                border={'none'}
+                h={['3px', '3px', '3px', '100%']}
+                mx={'auto'}
+                opacity={100}
+                orientation="vertical"
+                p={0}
+                w={['80%', '80%', '80%', '5px']}
+              />
+              <TripSummary props={trip} />
+            </Grid>
+          </LazyLoad>
+        ))}
     </>
   );
 }
